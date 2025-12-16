@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musicman</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="index.html" class="logo-link">
+          <img src="images/weblogo.png" alt="Logo" class="logo" />
+          <h1>Musicman</h1>
+        </a>
+      </div>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav id="navMenu">
+        <ul>
+          <li><a href="#produk">Produk</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <h2>Selamat Datang di Musicman</h2>
+      <p>Toko musik terbaik untuk pecinta alat musik.</p>
+    </section>
+
+    <section id="produk" class="produk-section">
+      <h2>Produk Kami</h2>
+
+      <!-- SLIDER -->
+      <div class="slider-container">
+        <!-- tombol kiri -->
+        <button class="prev">❮</button>
+
+        <!-- track bergerak -->
+        <div class="slider-track fade">
+          <div class="product-card">
+            <img src="images/gibsonsgpro.png" alt="" />
+            <h3>Gibson SG Pro</h3>
+            <p>Rp 20.000.000</p>
+            <div class="btn-group">
+              <button class="detail-btn">Lihat Detail</button>
+              <button class="cart-btn">Tambah ke Keranjang</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="images/fenderstratocustomshop.jpeg" alt="" />
+            <h3>Fender Stratocaster Customshop</h3>
+            <p>Rp 19.000.000</p>
+            <div class="btn-group">
+              <button class="detail-btn">Lihat Detail</button>
+              <button class="cart-btn">Tambah ke Keranjang</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="images/gibsonlespaul.png" alt="" />
+            <h3>Gibson Les Paul 60s</h3>
+            <p>Rp 25.000.000</p>
+            <div class="btn-group">
+              <button class="detail-btn">Lihat Detail</button>
+              <button class="cart-btn">Tambah ke Keranjang</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="images/epiphoneflyingV.jpeg" alt="" />
+            <h3>Epiphone Flying V</h3>
+            <p>Rp 135.000.000</p>
+            <div class="btn-group">
+              <button class="detail-btn">Lihat Detail</button>
+              <button class="cart-btn">Tambah ke Keranjang</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="images/casinosunburst.jpeg" alt="" />
+            <h3>Epiphone Casino Sunburst</h3>
+            <p>Rp 9.000.000</p>
+            <div class="btn-group">
+              <button class="detail-btn">Lihat Detail</button>
+              <button class="cart-btn">Tambah ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- tombol kanan -->
+        <button class="next">❯</button>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2024 Musicman</p>
+    </footer>
+
+    <script>
+      let track = document.querySelector(".slider-track");
+      let cards = document.querySelectorAll(".product-card");
+      let index = 0;
+
+      function moveSlider() {
+        index++;
+        if (index >= cards.length) index = 0;
+        track.style.transform = `translateX(-${index * 300}px)`;
+      }
+
+      let autoSlide = setInterval(moveSlider, 2500);
+
+      document.querySelector(".next").onclick = () => {
+        clearInterval(autoSlide);
+        moveSlider();
+      };
+
+      document.querySelector(".prev").onclick = () => {
+        clearInterval(autoSlide);
+        index--;
+        if (index < 0) index = cards.length - 1;
+        track.style.transform = `translateX(-${index * 300}px)`;
+      };
+    </script>
+  </body>
+</html>

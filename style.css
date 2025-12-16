@@ -1,0 +1,352 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #222;
+}
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* jarak logo ke tulisan */
+}
+
+.logo {
+  width: 40px; /* sesuaikan */
+  height: 40px; /* supaya proporsional */
+  cursor: pointer;
+}
+
+nav ul {
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+  }
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff9800;
+}
+
+/* BAGIAN HERO — FOTO BACKGROUND */
+#hero {
+  background-image: url("../images/bgrnd.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+}
+
+#produk {
+  padding: 40px 20px;
+  background: #000000;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+/* ------ HEADER WRAPPER ------ */
+header {
+  background: #222;
+  color: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* ------ LOGO ------ */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+}
+
+/* ------ NAV MENU (DESKTOP) ------ */
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* ------ HAMBURGER STYLE ------ */
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* ANIMASI HAMBURGER JADI X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+
+/* ------ MOBILE MENU ------ */
+@media (max-width: 768px) {
+  /* hide menu desktop */
+  nav ul {
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 180px;
+    padding: 15px 0;
+    border-radius: 5px;
+    display: none;
+  }
+
+  /* show when hamburger clicked */
+  nav.show ul {
+    display: flex;
+  }
+
+  /* show hamburger */
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* section product */
+
+/* === SECTION PRODUK === */
+.produk-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f6f6f6;
+}
+
+.produk-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* === FILTER KATEGORI === */
+.filter-box {
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  margin: 3px;
+  border: none;
+  background: #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: black;
+  color: white;
+}
+
+/* === SLIDER === */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Track */
+.slider-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.6s ease;
+}
+
+/* Card */
+.product-card {
+  width: 260px;
+  flex-shrink: 0;
+}
+.prev,
+.next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* === CARD PRODUK === */
+.product-card {
+  min-width: 260px;
+  padding: 20px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.btn-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.detail-btn,
+.cart-btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.detail-btn {
+  background: #007bff;
+  color: white;
+}
+
+.cart-btn {
+  background: #28a745;
+  color: white;
+}
+
+/* === NEXT & PREV === */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .product-card {
+    min-width: 200px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00000090;
+  border: none;
+  padding: 12px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background: #000000cc;
+}
